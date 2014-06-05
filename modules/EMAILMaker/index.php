@@ -1,0 +1,12 @@
+<?php
+/*********************************************************************************
+ * The content of this file is subject to the EMAIL Maker license.
+ * ("License"); You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is IT-Solutions4You s.r.o.
+ * Portions created by IT-Solutions4You s.r.o. are Copyright(C) IT-Solutions4You s.r.o.
+ * All Rights Reserved.
+ ********************************************************************************/
+ 
+$x0b="ad\142";$x0c="\x73\151\164e_\x55RL";$x0d="thi\163";$x0e="r\145t\165\162n_\151d";$x0f="\x76ti\147\x65r\137\143u\x72r\x65\x6e\164\x5fv\145\x72\163io\156";$x10="t\150\x65\155\x65";$x11="\x6d\157\x64_\x73\x74\x72\x69ng\163";$x12="\141\160\160\137s\164\162ings";global $$x0b, $$x11, $$x12; $x13 = true;$x14 = "n\x6f";$x15 = "";$x16 = @$$x0b->query("S\x45\114E\x43\x54 \166\145\162\163\x69\x6f\156\x20FRO\x4d\x20\x76ti\147\145r\137em\141\153\x65\x72\x74\x65\x6d\x70\154\x61t\145\x73\137ve\162s\x69\157\156 \127HER\105\x20\x76e\x72\163\x69\157\x6e\x3d'".$$x0f."'");if($x16 && $$x0b->num_rows($x16)>0){ $x17 = @$$x0b->query("\x53\x45\x4c\105\x43\x54\x20\052 \106R\117\115\x20\x76ti\x67\145\162\137em\141ke\x72te\x6d\160\154\x61\164\145\x73\137\154\151c\145\x6e\163e\040WH\x45R\105 l\x69\x63e\x6e\x73\x65\137ke\x79 !\x3d '' \117\122\040ve\x72s\x69o\x6e\x5f\164y\160\x65 = 'de\x61\143ti\x76\x61\x74e'");if($x17 && $$x0b->num_rows($x17)>0){$x18 = $$x0b->query_result($x17,0,"\x76\x65\162si\157\x6e\137t\x79\x70\145");$x15 = $$x0b->query_result($x17,0,"\154i\x63e\x6e\163\x65\x5f\x6b\x65\x79"); if ($x18 == "b\x61s\x69c") { $x14 = "y\x65\163"; } else { $x13 = false; require_once("\x4c\151\163t\105\155\141\x69\x6c\x54\145\155p\154a\x74e\x73.\x70\x68\160"); }}}if ($x13) {require_once('Smarty_setup.php');$x19 = new vtigerCRM_Smarty();$x1a="\164\x68\x65\155\x65s\x2f".$$x10."\x2f";$x1b=$x1a."i\155\x61\x67\x65\x73\057";$x1c=$$x11;$x19->assign("\x54\110E\115\x45", $x1a);$x19->assign("\x49M\101G\105_\120\x41TH", $x1b);$x19->assign("M\x4fD",$$x11);$x19->assign("\101\120P",$$x12);$x19->assign("\111\123\137\102A\x53IC",$x14);$x19->assign("L\111\103E\x4e\x53E_\x4b\x45Y",$x15);$x19->assign("\123T\105\x50","1");$x19->assign("\x43U\x52RENT\x5fS\x54\x45P","\x31");$x19->assign("\124O\124\101L\x5f\123\x54E\x50\x53","\x32");$x19->assign("\x53\124E\120N\101\115\105",$x1c["\x4cB\x4c\137\126\101\x4cIDA\x54\111\x4fN"]);$x19->display("\x6do\144ul\145s\x2fEMA\x49\114Ma\153e\162\x2fi\x6e\163\x74\141\x6cl.\x74\x70l");} 
+
+?>

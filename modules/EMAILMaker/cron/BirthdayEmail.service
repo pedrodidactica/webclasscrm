@@ -1,0 +1,173 @@
+<?php
+/*********************************************************************************
+  ** The contents of this file are subject to the vtiger CRM Public License Version 1.0
+   * ("License"); You may not use this file except in compliance with the License
+   * The Original Code is:  vtiger CRM Open Source
+   * The Initial Developer of the Original Code is vtiger.
+   * Portions created by vtiger are Copyright (C) vtiger.
+   * All Rights Reserved.
+  *
+ ********************************************************************************/
+require_once('include/utils/utils.php');
+require_once('include/logging.php');
+require_once('include/database/PearDatabase.php');
+require_once('modules/Emails/Emails.php');
+require_once("modules/EMAILMaker/ConvertEMAIL.php");
+require_once("modules/EMAILMaker/mail.php");
+// Get the list of Invoice for which Recurring is enabled.
+
+global $adb, $log, $default_timezone;
+global $site_URL, $application_unique_key;
+global $default_language;
+global $current_language;
+global $default_theme; 
+//$current_user->time_zone = $default_timezone;
+
+$from_name = "";
+$from_address = "";
+
+$cc = "";
+$bcc = "";
+$templateid = 4;
+$Contacts = array();
+$actual_month = date("m");
+$actual_day = date("d");
+//$info = "";
+
+$sql_s = "SELECT * FROM vtiger_emakertemplates_settings";
+$result_s = $adb->query($sql_s);
+$phpmailer_version  = $adb->query_result($result_s,0,"phpmailer_version");
+
+$sql = "SELECT vtiger_contactsubdetails.birthday, vtiger_contactdetails.* FROM vtiger_contactdetails 
+        INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_contactdetails.contactid
+        INNER JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid = vtiger_contactdetails.contactid  
+        WHERE vtiger_crmentity.deleted = '0' AND MONTH(birthday) = '".$actual_month."' AND DAY(birthday) = '".$actual_day."' ";
+$result = $adb->query($sql);
+while($row = $adb->fetchByAssoc($result))
+{
+    $email = $row['email'];
+    
+    if ($email == "") $email = $row['otheremail'];
+     	  
+    if ($email == "") $email = $row['secondaryemail'];
+    
+    $fullname = trim($row['firstname']." ".$row['lastname']);
+    
+    if ($email != "") $Contacts[$row['contactid']] = array("fullname"=>$fullname,"email"=>$email);
+}
+
+if (count($Contacts) > 0)
+{
+    $sql2 = "SELECT * FROM vtiger_emakertemplates WHERE templatename = 'BIRTHDAY_EMAIL_CRON'";
+    $result2 = $adb->query($sql2);
+    $num_rows2 = $adb->num_rows($result2);
+    
+    if ($num_rows2 > 0)
+    {
+        $subject = $adb->query_result($result2,0,"subject");
+        $body = $adb->query_result($result2,0,"body");
+        
+        $owner_user_id = $adb->query_result($result2,0,"owner");
+        
+        $current_user = new Users();
+        $current_user->retrieveCurrentUserInfoFromFile($owner_user_id);
+    
+        $_SESSION["authenticated_user_id"] = $owner_user_id;
+
+        if(!empty($current_user->theme)) {
+    		$theme = $current_user->theme;
+    	} else {
+    		$theme = $default_theme;
+    	}
+
+        $_SESSION['vtiger_authenticated_user_theme'] = $theme;
+        
+        if(!empty($current_user->language)) {
+    		$current_language = $current_user->language;
+    	} else {
+    		$current_language = $default_language;
+    	}
+        
+        $_SESSION['authenticated_user_language'] = $current_language;
+    
+        if($from_name == "")
+        {
+            $sql2="select * from vtiger_organizationdetails where organizationname != ''";
+            $result2 = $adb->pquery($sql2, array());
+        
+            while($row2 = $adb->fetchByAssoc($result2))
+            {
+                $from_name = $row2['organizationname'];
+            }
+        }
+        
+        if($from_address == "")
+        {
+            $sql_a="select * from vtiger_systems where from_email_field != ? AND server_type = ?";
+            $result_a = $adb->pquery($sql_a, array('','email'));
+            $from_email_field = $adb->query_result($result_a,0,"from_email_field"); 
+        }
+        
+        if($from_name == "")
+        {
+             $from_name = trim($current_user->first_name." ".$current_user->last_name);
+            
+        }
+        
+        if($from_address == "")
+        {
+            $from_address = $current_user->column_fields['email1'];
+        }
+        
+        
+        $pos = strpos($body, '$logo$');
+        if ($pos !== false)
+        {
+        
+        	$body =str_replace('$logo$','<img src="cid:logo" />',$body);
+        	$logo=1;
+        } 
+        
+        foreach ($Contacts AS $cid => $cdata)
+        {
+            $focus = new Emails();
+            $focus->filename = "";
+            $focus->parent_id = "";
+            $focus->parent_type = "";
+            $focus->column_fields["assigned_user_id"]=$current_user->id;
+            $focus->column_fields["activitytype"]="Emails";
+            $focus->column_fields["date_start"]= date(getNewDisplayDate());//This will be converted to db date format in save
+             
+            $Email_Content = new EMAILContent();
+            $Email_Content->setContent($subject."|@{[&]}@|".$body, $cid, "Contacts", $cid); 
+            $convert_content = $Email_Content->getContent();    
+            $Email_Images = $Email_Content->getEmailImages();
+        
+            list($subject,$body) = explode("|@{[&]}@|",$convert_content);
+            
+            $focus->column_fields["parent_id"] = $cid;
+            //$focus->parent_type = $pmodule;
+            $focus->column_fields["subject"] = $subject;
+            $focus->column_fields["description"] = $body;
+            
+            $saved_toid = $cdata["fullname"]."<".$cdata["email"].">"; 
+            
+            $focus->column_fields["saved_toid"] = $saved_toid;
+            
+            $focus->column_fields["ccmail"] = $cc;
+            $focus->column_fields["bccmail"] = "";
+    
+            $focus->save("Emails");
+            
+            $track_URL = $site_URL."/modules/Emails/TrackAccess.php?record=$cid&mailid=$emailid&app_key=$application_unique_key";
+            $body = $body."<img src='".$track_URL."' alt='' width='1' height='1'>";
+               
+     
+            $mail_status = send_em_mail('Emails',$cdata["email"],$from_name,$from_address,$subject,$body,$cc,$bcc,'all',$focus->id,$logo,$Email_Images,$phpmailer_version);
+            
+            //$info .= " mail_status: ".$mail_status;
+            unset($focus); 
+        }
+    }
+}
+?>

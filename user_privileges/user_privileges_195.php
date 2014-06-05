@@ -1,0 +1,9 @@
+<?php
+
+
+//This is the access privilege file
+$is_admin=true;
+
+$user_info=array('user_name'=>'tomas.rossi','is_admin'=>'on','user_password'=>'$1$to000000$GAZoiX8xqrteIkghQrTgW/','confirm_password'=>'$1$to000000$GAZoiX8xqrteIkghQrTgW/','first_name'=>'(Director General)','last_name'=>'Jos&eacute; Tom&aacute;s Rossi','roleid'=>'H2','email1'=>'trossi@webclass.com','status'=>'Active','activity_view'=>'Today','lead_view'=>'Today','hour_format'=>'24','end_hour'=>'','start_hour'=>'08:00','title'=>'','phone_work'=>'','department'=>'','phone_mobile'=>'','reports_to_id'=>'','phone_other'=>'','email2'=>'','phone_fax'=>'','secondaryemail'=>'','phone_home'=>'','date_format'=>'dd-mm-yyyy','signature'=>'&lt;strong&gt;Jos&eacute; Tom&aacute;s Rossi V.&lt;/strong&gt; Director General  Did&aacute;ctica Tecnolog&iacute;as Educativas 9-98187431 M&oacute;vil 2-656-7574  Directo trossi@webclass.com','description'=>'','address_street'=>'','address_city'=>'','address_state'=>'','address_postalcode'=>'','address_country'=>'','accesskey'=>'zZjHp2bX3l6insoT','time_zone'=>'America/Argentina/Buenos_Aires','currency_id'=>'1','currency_grouping_pattern'=>'123,456,789','currency_decimal_separator'=>'.','currency_grouping_separator'=>'.','currency_symbol_placement'=>'$1.0','imagename'=>'','internal_mailer'=>'1','theme'=>'softed','language'=>'es_es','reminder_interval'=>'1 Minute','no_of_currency_decimals'=>'2','truncate_trailing_zeros'=>'0','dayoftheweek'=>'Sunday','callduration'=>'5','othereventduration'=>'5','calendarsharedtype'=>'public','default_record_view'=>'Summary','leftpanelhide'=>'0','rowheight'=>'','ccurrency_name'=>'','currency_code'=>'CLP','currency_symbol'=>'&#36;','conv_rate'=>'1.00000','record_id'=>'','record_module'=>'','currency_name'=>'Chile, Pesos','id'=>'195');
+
+?>
