@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-26 19:45:10
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-13 15:51:17
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\Contacts\DetailViewHeaderTitle.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24568538399c68feb73-58563545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8e4f15b9dcdcbfd67138c0eaed1e9fcc555c36f6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\Contacts\\DetailViewHeaderTitle.tpl',
-      1 => 1400778760,
+      1 => 1401997465,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_538399c6977d0',
   'variables' => 
   array (
     'RECORD' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'COUNTER' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_538399c6977d0',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_538399c6977d0')) {function content_538399c6977d0($_smarty_tpl) {?>
 <span class="span2"><?php  $_smarty_tpl->tpl_vars['IMAGE_INFO'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['IMAGE_INFO']->_loop = false;

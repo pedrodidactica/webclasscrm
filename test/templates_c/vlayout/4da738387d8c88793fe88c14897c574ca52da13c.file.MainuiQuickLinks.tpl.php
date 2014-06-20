@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-23 22:11:10
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-17 19:10:00
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\MailManager\MainuiQuickLinks.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32445537bcd3a5ccdd0-40334568%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4da738387d8c88793fe88c14897c574ca52da13c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\MailManager\\MainuiQuickLinks.tpl',
-      1 => 1400778760,
+      1 => 1401997391,
       2 => 'file',
     ),
   ),

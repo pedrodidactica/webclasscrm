@@ -112,7 +112,6 @@ class Accounts extends CRMEntity {
 		'Assets' => array('table_name' => 'vtiger_assets', 'table_index' => 'assetsid', 'rel_index' => 'account'),
 		'Project' => array('table_name' => 'vtiger_project', 'table_index' => 'projectid', 'rel_index' => 'linktoaccountscontacts'),
 		'Payments' => array('table_name' => 'vtiger_payments', 'table_index' => 'paymentsid', 'rel_index' => 'relatedorganization'),
-		'Capacitacion' => array('table_name' => 'vtiger_capacitacion', 'table_index' => 'capacitacionid', 'rel_index' => 'linkto'),
 	);
 
 	function Accounts() {

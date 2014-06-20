@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-23 16:02:24
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-16 20:08:17
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\Vtiger\UnifiedSearchResults.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12341537f71102c91a1-21070175%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7e5226c2df030430bb6bd0debd4d186bca7b761b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\Vtiger\\UnifiedSearchResults.tpl',
-      1 => 1400778760,
+      1 => 1401997443,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_537f7110374fc',
   'variables' => 
   array (
     'MATCHING_RECORDS' => 0,
@@ -30,8 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'DETAILVIEW_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_537f7110374fc',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_537f7110374fc')) {function content_537f7110374fc($_smarty_tpl) {?>
 <?php $_smarty_tpl->tpl_vars["totalCount"] = new Smarty_variable(0, null, 0);?><?php $_smarty_tpl->tpl_vars["totalModulesSearched"] = new Smarty_variable(count($_smarty_tpl->tpl_vars['MATCHING_RECORDS']->value), null, 0);?><?php  $_smarty_tpl->tpl_vars['searchRecords'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['searchRecords']->_loop = false;

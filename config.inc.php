@@ -60,7 +60,7 @@ $dbconfig['db_server'] = 'localhost';
 $dbconfig['db_port'] = ':3306';
 $dbconfig['db_username'] = 'root';
 $dbconfig['db_password'] = '12345';
-$dbconfig['db_name'] = 'webclass_crm';
+$dbconfig['db_name'] = 'crmweb_webclass';
 $dbconfig['db_type'] = 'mysql';
 $dbconfig['db_status'] = 'true';
 

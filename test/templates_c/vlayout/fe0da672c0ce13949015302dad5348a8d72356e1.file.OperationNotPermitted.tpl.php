@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-26 18:42:17
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-09 19:34:46
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\Vtiger\OperationNotPermitted.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17003537dfd315b0658-99622033%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0da672c0ce13949015302dad5348a8d72356e1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\Vtiger\\OperationNotPermitted.tpl',
-      1 => 1400778760,
+      1 => 1401997441,
       2 => 'file',
     ),
   ),

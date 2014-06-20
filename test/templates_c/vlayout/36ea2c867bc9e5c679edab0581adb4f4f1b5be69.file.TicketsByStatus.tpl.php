@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-26 14:04:01
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-06 15:30:07
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\HelpDesk\dashboards\TicketsByStatus.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32520538349d1663a52-59430385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '36ea2c867bc9e5c679edab0581adb4f4f1b5be69' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\HelpDesk\\dashboards\\TicketsByStatus.tpl',
-      1 => 1400778760,
+      1 => 1401997395,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_538349d16d4ef',
   'variables' => 
   array (
     'MODULE_NAME' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'USER_NAME' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_538349d16d4ef',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_538349d16d4ef')) {function content_538349d16d4ef($_smarty_tpl) {?>
 <script type="text/javascript">

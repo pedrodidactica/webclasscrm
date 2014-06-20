@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-23 13:53:25
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-06 15:30:02
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\Home\dashboards\DashBoardPreProcess.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20805537bccfc3c32b1-41168265%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3c2521a7916ae3113b56d66dfebacf94815f4576' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\Home\\dashboards\\DashBoardPreProcess.tpl',
-      1 => 1400778760,
+      1 => 1401997381,
       2 => 'file',
     ),
   ),

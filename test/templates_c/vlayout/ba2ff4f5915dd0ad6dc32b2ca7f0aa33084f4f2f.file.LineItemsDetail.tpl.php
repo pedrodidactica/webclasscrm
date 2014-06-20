@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2014-05-26 21:29:51
+<?php /* Smarty version Smarty-3.1.7, created on 2014-06-13 16:05:43
          compiled from "C:\xampp\htdocs\webclasscrm\includes\runtime/../../layouts/vlayout\modules\Inventory\LineItemsDetail.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:139665383b24f7d6cf2-16067743%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba2ff4f5915dd0ad6dc32b2ca7f0aa33084f4f2f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\webclasscrm\\includes\\runtime/../../layouts/vlayout\\modules\\Inventory\\LineItemsDetail.tpl',
-      1 => 1400778760,
+      1 => 1401997375,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_5383b24f9886d',
   'variables' => 
   array (
     'RELATED_PRODUCTS' => 0,
@@ -33,8 +35,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'SHIPPING_HANDLING_TAX_INFO' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_5383b24f9886d',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5383b24f9886d')) {function content_5383b24f9886d($_smarty_tpl) {?>
 <?php $_smarty_tpl->tpl_vars['FINAL_DETAILS'] = new Smarty_variable($_smarty_tpl->tpl_vars['RELATED_PRODUCTS']->value[1]['final_details'], null, 0);?>
